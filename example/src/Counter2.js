@@ -2,7 +2,7 @@ import React from 'react'
 import startAppSimple from '../../src/startAppSimple'
 
 
-// initialModel : Model
+// model : Model
 const model = { count: 1 }
 
 // update : (Model, Action) -> Model

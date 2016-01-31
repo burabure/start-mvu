@@ -10,7 +10,9 @@ function startAppSimple({ model, view, update }, name) {
 
   class StartAppSimple extends React.Component {
     componentDidMount() {
-      const viewModel = isPlainObject(model) ? Object.assign({}, model, this.props) : model
+      const viewModel = isPlainObject(model) ?
+        Object.assign({}, model, this.props) : this.props.model || model
+
       simple({ model: viewModel, view: reactView, update })
         .forEach(element => this.setState(element))
     }
@@ -20,6 +22,7 @@ function startAppSimple({ model, view, update }, name) {
     }
   }
 
+  StartAppSimple.propTypes = { model: React.PropTypes.any }
   StartAppSimple.displayName = name ? `StartAppSimple(${name})` : 'StartAppSimple'
   return StartAppSimple
 }

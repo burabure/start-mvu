@@ -3,7 +3,7 @@ import Counter from './Counter2'
 import startAppSimple from '../../src/startAppSimple'
 
 
-// initialModel : Model
+// model : Model
 const model = {
   counters: [
     { id: 1 },
