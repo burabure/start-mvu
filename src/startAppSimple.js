@@ -4,8 +4,12 @@ import isPlainObject from './utils/isPlainObject'
 import simple from './startApp'
 
 
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'View'
+}
+
 function startAppSimple({ model, view, update }, name) {
-  view.displayName = name ? name : 'View'
+  view.displayName = name ? name : getDisplayName(view)
   const reactView = React.createElement.bind(this, view)
 
   class StartAppSimple extends React.Component {
@@ -23,7 +27,9 @@ function startAppSimple({ model, view, update }, name) {
   }
 
   StartAppSimple.propTypes = { model: React.PropTypes.any }
-  StartAppSimple.displayName = name ? `StartAppSimple(${name})` : 'StartAppSimple'
+  StartAppSimple.displayName = view.displayName ?
+    `StartAppSimple(${view.displayName})` : 'StartAppSimple'
+
   return StartAppSimple
 }
 

@@ -35,14 +35,14 @@ const update = (model, action) => {
 const displayCounters = ({ counters, dispatch }) =>
   counters.map(({ id }) =>
     <div key={id}>
-      <Counter count={10} />
+      <Counter count={5} />
       <button onClick={dispatch({ type: 'REMOVE', id })}>Remove Counter</button>
     </div>
   )
 
 
-// view : { Model, Dispatcher Action } -> Html
-const view = ({ model, dispatch }) =>
+// CounterList : { Model, Dispatcher Action } -> Html
+const CounterList = ({ model, dispatch }) =>
   <div>
     <h1>Counters</h1>
     <pre>model: {JSON.stringify(model)}</pre>
@@ -51,4 +51,4 @@ const view = ({ model, dispatch }) =>
   </div>
 
 
-export default startAppSimple({ model, view, update }, 'CounterList')
+export default startAppSimple({ model, view: CounterList, update })

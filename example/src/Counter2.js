@@ -14,8 +14,8 @@ const update = (model, action) => {
   }
 }
 
-// view : { Model, Dispatcher Action } -> Html
-const view = ({ model, dispatch }) =>
+// Counter : { Model, Dispatcher Action } -> Html
+const Counter = ({ model, dispatch }) =>
   <div>
     <h1>Count: {model.count}</h1>
     <button onClick={dispatch('INCREMENT')}>Increment</button>
@@ -23,4 +23,4 @@ const view = ({ model, dispatch }) =>
   </div>
 
 
-export default startAppSimple({ model, view, update }, 'Counter')
+export default startAppSimple({ model, view: Counter, update })
