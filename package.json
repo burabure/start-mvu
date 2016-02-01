@@ -1,7 +1,7 @@
 {
   "name": "start-mvu",
   "version": "1.0.0",
-  "description": "",
+  "description": "Model-View-Update pattern implementation for Javascript",
   "author": "Nicolas @burabure Fernandez",
   "license": "MIT",
   "main": "index.js",
