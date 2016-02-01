@@ -2,8 +2,8 @@ import Mailbox from './utils/Mailbox'
 import scanObservable from './utils/scanObservable'
 
 
-// simple : { model, view, update } -> Observable Html
-export default function simple({ model, view, update }) {
+// startMVU : { model, view, update } -> Observable Html
+export default function startMVU({ model, view, update }) {
   // actions : Mailbox Action
   const actions = new Mailbox([])
 

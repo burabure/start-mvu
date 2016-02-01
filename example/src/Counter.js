@@ -1,5 +1,5 @@
 import React from 'react'
-import startAppSimple from '../../src/startAppSimple'
+import createApp from '../../src/createApp'
 
 
 // model : Model
@@ -23,4 +23,4 @@ const view = ({ model, dispatch }) =>
   </div>
 
 
-export default startAppSimple({ model, view, update }, 'Counter')
+export default createApp({ model, view, update }, 'Counter')

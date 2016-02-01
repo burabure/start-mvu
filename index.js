@@ -1,3 +1,3 @@
-import startAppSimple from './src/startAppSimple'
+import createApp from './src/createApp'
 
-export default startAppSimple
+export default createApp

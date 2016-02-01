@@ -1,6 +1,6 @@
 import React from 'react'
 import Counter from './Counter2'
-import startAppSimple from '../../src/startAppSimple'
+import createApp from '../../src/createApp'
 
 
 // model : Model
@@ -48,4 +48,4 @@ const CounterList = ({ model, dispatch }) =>
     {displayCounters({ counters: model.counters, dispatch })}
   </div>
 
-export default startAppSimple({ model, view: CounterList, update })
+export default createApp({ model, view: CounterList, update })

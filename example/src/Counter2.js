@@ -1,5 +1,5 @@
 import React from 'react'
-import startAppSimple from '../../src/startAppSimple'
+import createApp from '../../src/createApp'
 
 
 // model : Model
@@ -22,4 +22,4 @@ const Counter = ({ model, dispatch }) =>
     <button onClick={dispatch('DECREMENT')}>Decrement</button>
   </div>
 
-export default startAppSimple({ model, view: Counter, update })
+export default createApp({ model, view: Counter, update })

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import simple from './startApp'
+import startMVU from './startMVU'
 
 // initialModel : Model
 const model = 1
@@ -24,7 +24,7 @@ const view = ({ dispatch, model }) =>
 
 
 // run
-simple({ model, view, update })
+startMVU({ model, view, update })
   .forEach(view => {
     ReactDOM.render(view, document.getElementById('app'))
   })

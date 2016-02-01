@@ -16,8 +16,8 @@ module.exports = {
   entry: path.resolve(__dirname, 'index.js'),
   output: {
     path: dirDist,
-    filename: 'start-app.js',
-    library: 'StartApp',
+    filename: 'startMVU.js',
+    library: 'StartMVU',
     libraryTarget: 'umd',
   },
   devServer: {

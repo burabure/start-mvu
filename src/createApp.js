@@ -1,23 +1,23 @@
 /* eslint no-param-reassign:0 */
 import React from 'react'
 import isPlainObject from './utils/isPlainObject'
-import simple from './startApp'
+import startMVU from './startMVU'
 
 
 function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'View'
 }
 
-function startAppSimple({ model, view, update }, name) {
+export default function createApp({ model, view, update }, name) {
   view.displayName = name ? name : getDisplayName(view)
   const reactView = React.createElement.bind(this, view)
 
-  class StartAppSimple extends React.Component {
+  class MVUApp extends React.Component {
     componentDidMount() {
       const viewModel = isPlainObject(model) ?
         Object.assign({}, model, this.props) : this.props.model || model
 
-      simple({ model: viewModel, view: reactView, update })
+      startMVU({ model: viewModel, view: reactView, update })
         .forEach(element => this.setState(element))
     }
 
@@ -26,11 +26,9 @@ function startAppSimple({ model, view, update }, name) {
     }
   }
 
-  StartAppSimple.propTypes = { model: React.PropTypes.any }
-  StartAppSimple.displayName = view.displayName ?
-    `StartAppSimple(${view.displayName})` : 'StartAppSimple'
+  MVUApp.propTypes = { model: React.PropTypes.any }
+  MVUApp.displayName = view.displayName ?
+    `MVUApp(${view.displayName})` : 'MVUApp'
 
-  return StartAppSimple
+  return MVUApp
 }
-
-export default startAppSimple
