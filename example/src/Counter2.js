@@ -22,5 +22,4 @@ const Counter = ({ model, dispatch }) =>
     <button onClick={dispatch('DECREMENT')}>Decrement</button>
   </div>
 
-
 export default startAppSimple({ model, view: Counter, update })

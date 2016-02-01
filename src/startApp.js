@@ -1,20 +1,17 @@
-import { Subject } from 'rxjs-es/Subject'
-import 'rxjs-es/add/operator/map'
-import 'rxjs-es/add/operator/scan'
-import 'rxjs-es/add/operator/startWith'
+import Mailbox from './utils/Mailbox'
+import scanObservable from './utils/scanObservable'
+
 
 // simple : { model, view, update } -> Observable Html
 export default function simple({ model, view, update }) {
-  // actions : Subject Action
-  const actions = new Subject()
+  // actions : Mailbox Action
+  const actions = new Mailbox([])
 
   // models : Observable Model
-  const models = actions
-    .startWith([])
-    .scan(update, model)
+  const models = scanObservable(update, model, actions.observable)
 
   return models.map(model => {
-    const dispatch = (action) => actions.next.bind(actions, action)
+    const dispatch = (action) => actions.observer.next.bind(actions.observer, action)
     return view({ model, dispatch })
   })
 }

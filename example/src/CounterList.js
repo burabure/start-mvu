@@ -5,12 +5,9 @@ import startAppSimple from '../../src/startAppSimple'
 
 // model : Model
 const model = {
-  counters: [
-    { id: 1 },
-  ],
+  counters: [ { id: 1 } ],
   nextID: 2,
 }
-
 
 // update : (Model, Action) -> Model
 const update = (model, action) => {
@@ -30,16 +27,17 @@ const update = (model, action) => {
   }
 }
 
-
 // displayCounters : { Array {id}, Dispatcher Action } -> Html
-const displayCounters = ({ counters, dispatch }) =>
-  counters.map(({ id }) =>
-    <div key={id}>
+const displayCounters = ({ counters, dispatch }) => {
+  const style = {padding: 5, margin: '10px 0', background: '#eee'}
+  const buttonStyle = {background: '#E02727', color: '#FFF'}
+  return counters.map(({ id }) =>
+    <div style={style} key={id}>
       <Counter count={5} />
-      <button onClick={dispatch({ type: 'REMOVE', id })}>Remove Counter</button>
+      <button onClick={dispatch({ type: 'REMOVE', id })} style={buttonStyle}>Remove Counter</button>
     </div>
   )
-
+}
 
 // CounterList : { Model, Dispatcher Action } -> Html
 const CounterList = ({ model, dispatch }) =>
@@ -49,6 +47,5 @@ const CounterList = ({ model, dispatch }) =>
     <button onClick={dispatch({ type: 'ADD' })}>Add Counter</button>
     {displayCounters({ counters: model.counters, dispatch })}
   </div>
-
 
 export default startAppSimple({ model, view: CounterList, update })

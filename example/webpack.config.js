@@ -30,7 +30,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: dirHtml },
     ]),
-    new webpack.NoErrorsPlugin(),
   ],
   stats: {
     colors: true,

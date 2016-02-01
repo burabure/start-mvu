@@ -21,8 +21,10 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-react": "^3.16.1",
-    "rxjs-es": "^5.0.0-beta.1",
-    "webpack": "^2.0.6-beta"
+    "install": "^0.4.1",
+    "npm": "^3.6.0",
+    "webpack": "^2.0.6-beta",
+    "zen-observable": "^0.1.9"
   },
   "peerDependencies": {
     "react": "^0.14.7"
