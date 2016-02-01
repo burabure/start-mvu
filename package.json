@@ -1,7 +1,7 @@
 {
   "name": "start-mvu",
   "version": "1.0.0",
-  "description": "Model-View-Update pattern implementation for Javascript",
+  "description": "Model-View-Update reactive pattern for Javascript",
   "author": "Nicolas @burabure Fernandez",
   "license": "MIT",
   "main": "index.js",
@@ -28,5 +28,12 @@
   },
   "peerDependencies": {
     "react": "^0.14.7"
+  },
+  "bugs": {
+    "url": "https://github.com/burabure/start-mvu/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burabure/start-mvu.git"
   }
 }
