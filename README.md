@@ -2,6 +2,13 @@
 
 ### EXPERIMENTAL WORK IN PROGRESS
 
+```
+cd example
+npm install
+npm start
+http://localhost:8080
+```
+
 #### ToDo
 - [ ] Separate React HoC into it's own package
 - [ ] Write Tests
